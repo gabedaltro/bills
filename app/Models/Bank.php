@@ -5,26 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Bank extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'pix_key',
-    ];
-
-    protected $casts = [
-        'pix_key' => 'array',
-    ];
-
-    protected $hidden = [];
-
+    protected $fillable = ['name'];
 
     public function bills()
     {
         return $this->hasMany(Bill::class);
     }
 }
-
